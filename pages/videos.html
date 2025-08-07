@@ -5,32 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Videos - Dust3y</title>
     <style>
-        .video-container {
-            padding-left: 150px;
-            padding-top: 50px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 5rem;
-        }
-        body {
-        background-color: #98bedb2c;
-      }
-      .header {
-  text-align: center;
-  margin-bottom: 25px;
-  margin-top: 6px;
+      body {
+  background-color: #98bedb2c;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* allows wrapping if too narrow */
+  gap: 20px; /* spacing between links */
+  margin: 30px 0;
+  margin-top: -5px;
 }
 .logo-image {
-  padding-top: 25px;
+  padding-top: 15px;
   margin-left: 15px;
-  width: 10%;
+  margin-bottom: 10px;
+  width: 15%;
   height: auto;
   display: inline-block;
-}
+  max-width: 150px; /* prevent it from getting too big on large screens */
+  min-width: 100px;  /* prevent it from getting too small */}
 #mc_embed_shell {
   padding-top: 50px;
   text-align: center;
 }
+      .video-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+  }
+  .video-container iframe {
+    flex: 1 1 45%; /* 45% width on larger screens */
+    max-width: 560px;
+    min-width: 300px;
+    height: 315px;
+  }
+
+  /* Mobile layout - stack videos */
+  @media (max-width: 700px) {
+    .video-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+    }
+  }
     </style>
 </head>
 <body>
